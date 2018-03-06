@@ -23,7 +23,9 @@ class App extends Component {
                           circles={this.state.circles}
                           chooseCircle={this.chooseCircle}/>
           <Circles  activeI={this.state.activeI}
-                    circles={this.state.circles}/>
+                    circles={this.state.circles}
+                    chooseCircle={this.chooseCircle}
+                    />
         </main>
       </div>
     );
@@ -35,12 +37,10 @@ class App extends Component {
 const CircleSelector = (props) => {
   console.log(props.activeI)
   let activeI = props.activeI;
-  
   let buttons = props.circles.map((c, i) => 
       <div key={i}>
         <button  onClick={() => props.chooseCircle(i)} className={i === activeI ? 'selected': ''}>{i === activeI ? `CIRCLE ${c} SELECTED`: `SELECT CIRCLE ${c}`}</button>
       </div>
-
   );
 
   return(
@@ -52,8 +52,7 @@ const CircleSelector = (props) => {
 const Circles = (props) => {
 
   let circles = props.circles.map((c, i) => 
-  
-    <div className={i === props.activeI ? 'selected': ''} >{c}</div>
+    <div onClick={() => props.chooseCircle(i)} className={i === props.activeI ? 'selected': ''} >{c}</div>
 );
   return(
   <div className="Circles">
