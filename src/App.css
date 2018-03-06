@@ -1,0 +1,96 @@
+body, * {
+  box-sizing: border-box;
+}
+
+.App {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.App-header {
+  width: 100%;
+  padding: 20px;
+  font-size: 24px;
+  background-color: grey;
+  color: white;
+  text-align: center;
+  letter-spacing: 3px;
+}
+
+.App main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.CircleSelector {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 200px;
+  width: 150px;
+  border: 4px solid purple;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.CircleSelector button {
+  height: 30px;
+  width: 125px;
+  background-color: purple;
+  color: white;
+  border-radius: 4px;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+}
+
+.CircleSelector button:hover {
+  background-color: limegreen;
+}
+
+/* Adding a class of 'selected' to the selected button dynamically is secret sauce */
+.CircleSelector button.selected {
+  background-color: white;
+  color: limegreen;
+  border: none;
+  cursor: default;
+}
+
+.Circles {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  height: 200px;
+  width: 200px;
+  border: 4px solid limegreen;
+  border-radius: 8px;
+}
+
+.Circles div {
+  height: 75px;
+  width: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: limegreen;
+  color: white;
+  font-size: 30px;
+  border: 5px solid limegreen;
+  border-radius: 50%;
+  margin: auto 10px;
+}
+
+/* Another dose of dynamic class goodness will be sweet like bear meat */
+.Circles div.selected {
+  background-color: white;
+  color: purple;
+  border: 5px solid purple;
+}
